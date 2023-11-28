@@ -1,3 +1,14 @@
+
+
+# Example 
+```
+## register
+curl -d '{"address":"title", "token":"value2", "lang":"true", "platform":"ios"}' -H "Content-Type: application/json" -X POST http://192.168.50.83:8333/api/notification
+
+## confirm payment
+```
+
+
 # Node.js PostgreSQL CRUD example with Express Rest APIs
 
 Full Article with implementation:

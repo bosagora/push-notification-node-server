@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
-db.sequelize.sync()
+db.sequelize.sync({ force: true })
   .then(() => {
     console.log("Synced db.");
   })
@@ -34,7 +34,8 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to push-notification application." });
 });
 
-require("./app/routes/turorial.routes")(app);
+// require("./app/routes/turorial.routes")(app);
+require("./app/routes/notification.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
