@@ -3,7 +3,6 @@ version: '3.8'
 services:
   postgresdb:
     image: postgres
-    restart: unless-stopped
     env_file: ./.env
     environment:
       - POSTGRES_USER=$POSTGRESDB_USER
@@ -17,7 +16,6 @@ services:
     depends_on:
       - postgresdb
     build: push-notification-app
-    restart: unless-stopped
     env_file: ./.env
     ports:
       - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
